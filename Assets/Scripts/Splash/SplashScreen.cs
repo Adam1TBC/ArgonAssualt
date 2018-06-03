@@ -7,8 +7,8 @@ public class SplashScreen : MonoBehaviour {
 
     [SerializeField] float delay = 3f;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         Invoke("LoadFirstScene", delay);
 	}
 	
