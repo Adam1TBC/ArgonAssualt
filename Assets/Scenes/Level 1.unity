@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 86654456a99024deaaca3d778e830e28, type: 2}
   m_HaloStrength: 0.5
@@ -161,7 +161,7 @@ Prefab:
     - target: {fileID: 218466396709391350, guid: d37c39cef6ea279448be310e82884c00,
         type: 2}
       propertyPath: m_SplatMapDistance
-      value: 500
+      value: 1009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d37c39cef6ea279448be310e82884c00, type: 2}
@@ -266,12 +266,12 @@ Prefab:
     - target: {fileID: 108308988096223918, guid: 6f5349c5ff0296a4b87ca73b0c0615ad,
         type: 2}
       propertyPath: m_Intensity
-      value: 1
+      value: 1.017
       objectReference: {fileID: 0}
     - target: {fileID: 108308988096223918, guid: 6f5349c5ff0296a4b87ca73b0c0615ad,
         type: 2}
       propertyPath: m_BounceIntensity
-      value: 1.94
+      value: 2.002
       objectReference: {fileID: 0}
     - target: {fileID: 108308988096223918, guid: 6f5349c5ff0296a4b87ca73b0c0615ad,
         type: 2}
@@ -319,12 +319,42 @@ Transform:
   m_Father: {fileID: 1258185789}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &568863184 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1018957291111586, guid: 6f5349c5ff0296a4b87ca73b0c0615ad,
+    type: 2}
+  m_PrefabInternal: {fileID: 389544000}
+--- !u!114 &568863186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 568863184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 8
+  ScatteringCoef: 0.0007
+  ExtinctionCoef: 0
+  SkyboxExtinctionCoef: 0.864
+  MieG: 0.675
+  HeightFog: 0
+  HeightScale: 0.1
+  GroundLevel: 0
+  Noise: 0
+  NoiseScale: 0.015
+  NoiseIntensity: 1
+  NoiseIntensityOffset: 0.3
+  NoiseVelocity: {x: 3, y: 3}
+  MaxRayLength: 400
 --- !u!1 &600067736 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1912874076842214, guid: 7057087431567274cb7f3297970d147d,
     type: 2}
   m_PrefabInternal: {fileID: 1011366361}
---- !u!114 &600067740
+--- !u!114 &600067737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -335,10 +365,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f96592940a1c54b97890fa883a8f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 1
+  xSpeed: 20
   xRange: 6
-  ySpeed: 1
+  ySpeed: 20
   yRange: 4
+  positionPitchFactor: -5
+  controlPitchFactor: -20
+  positionYawFactor: 5
+  controlRollFactor: -20
 --- !u!1 &762237414
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +512,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4339453122920854, guid: 7057087431567274cb7f3297970d147d, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339453122920854, guid: 7057087431567274cb7f3297970d147d, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339453122920854, guid: 7057087431567274cb7f3297970d147d, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -683,6 +725,19 @@ MonoBehaviour:
   progressStyle: 0
   pointToPointThreshold: 4
   target: {fileID: 1662362886}
+--- !u!114 &1662362888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1662362882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eed1d9cbe64423499f1fefc0ce50417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resolution: 2
+  DefaultSpotCookie: {fileID: 2800000, guid: 5157bf6d690b6df458f6c0ce0c06d329, type: 3}
 --- !u!1 &1669990692
 GameObject:
   m_ObjectHideFlags: 0
